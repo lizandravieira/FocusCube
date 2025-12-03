@@ -11,9 +11,9 @@ Este projeto é composto por três módulos principais (Firmware, Backend e Fron
 ### **👨‍💻 Equipe de Desenvolvimento**
 
 * **André Goes** \- [GitHub](https://github.com/Nerebo)  
-* **Gabriel Caetano** \- [GitHub](https://www.google.com/search?q=https://github.com/SeuUsuarioAqui)  
-* **João Fittipaldi** \- [GitHub](https://www.google.com/search?q=https://github.com/SeuUsuarioAqui)  
-* **Lizandra Vieira** \- [GitHub](https://www.google.com/search?q=https://github.com/lizandravieira)
+* **Gabriel Caetano** \- [GitHub](https://github.com/caetrias)  
+* **João Fittipaldi** \- [GitHub](https://github.com/joaovfittipaldi)  
+* **Lizandra Vieira** \- [GitHub](https://github.com/lizandravieira)
 
 ### **🔗 Repositórios do Projeto**
 
