@@ -1,8 +1,6 @@
 /* =================================================================
- * PROJETO: FOCUS CUBE (Step 11 - Serial Monitor "Tagarela")
- * AUTOR: (Seu Nome)
- * DESCRIÇÃO: Adicionado logs no Serial Monitor durante a contagem
- * regressiva para facilitar o debug.
+ * PROJETO: FOCUS CUBE 
+ * AUTOR: André Goes, Gabriel Caetano, João Fittipaldi e Lizandra Vieira
  * =================================================================
  */
 
@@ -28,7 +26,6 @@ const char* MQTT_BROKER = "broker.hivemq.com";
 const int   MQTT_PORT = 1883;
 const char* MQTT_TOPIC_STATUS = "focuscube/status"; 
 const char* MQTT_TOPIC_COMMAND = "focuscube/comando"; 
-
 Adafruit_MPU6050 mpu;
 LiquidCrystal_I2C lcd(0x27, 16, 2); 
 WiFiClient espClient;
@@ -198,7 +195,6 @@ void vTask_Display(void *pvParameters) {
         if (timerSecondsRemaining > 0) {
           timerSecondsRemaining--; 
           
-          // [NOVIDADE] Imprime no Serial a cada segundo!
           Serial.printf("[TIMER] %02d:%02d\n", timerSecondsRemaining / 60, timerSecondsRemaining % 60);
           
         } else {
@@ -305,10 +301,10 @@ Face classifyFace(float ax, float ay, float az) {
 
 ModeConfig getModeForFace(Face f) {
   switch (f) {
-    case FACE_POS_Y: return {"FOCO 25", 25 * 60, TYPE_FOCUS};  
-    case FACE_NEG_Y: return {"FOCO 30", 30 * 60, TYPE_FOCUS};  
-    case FACE_POS_X: return {"FOCO 45", 45 * 60, TYPE_FOCUS};  
-    case FACE_NEG_X: return {"FOCO 60", 60 * 60, TYPE_FOCUS};  
+    case FACE_POS_Y: return {"FOCO: 25", 25 * 60, TYPE_FOCUS};  
+    case FACE_NEG_Y: return {"FOCO: 30", 30 * 60, TYPE_FOCUS};  
+    case FACE_POS_X: return {"FOCO: 45", 45 * 60, TYPE_FOCUS};  
+    case FACE_NEG_X: return {"FOCO: 60", 60 * 60, TYPE_FOCUS};  
     
     case FACE_NEG_Z: return {"DESCANSAR", 0, TYPE_SMART_BREAK}; 
     case FACE_POS_Z: return {"PARADO", 0, TYPE_IDLE}; 
@@ -326,7 +322,7 @@ void loadCustomChars() { for(int i=0; i<8; i++) lcd.createChar(i, custom_chars[i
 
 void printBigDigit(int digit, int col) {
   byte map[10][6] = {
-    {255, 0, 255, 255, 1, 255}, {0, 5, 255, 1, 255, 1}, {0, 2, 255, 255, 1, 1},
+    {255, 0, 255, 255, 1, 255}, {32, 32, 255, 32, 32, 255}, {0, 2, 255, 255, 1, 1},
     {0, 2, 255, 1, 2, 255}, {255, 1, 255, 32, 32, 255}, {255, 2, 0, 1, 2, 255},
     {255, 2, 0, 255, 2, 255}, {0, 0, 255, 32, 32, 255}, {255, 2, 255, 255, 2, 255},
     {255, 2, 255, 1, 2, 255}
