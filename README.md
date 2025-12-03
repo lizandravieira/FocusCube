@@ -17,7 +17,7 @@ Este projeto é composto por três módulos principais (Firmware, Backend e Fron
 
 ### **🔗 Repositórios do Projeto**
 
-* **Firmware (ESP32/FreeRTOS):** [Este Repositório](https://www.google.com/search?q=https://github.com/lizandravieira/FocusCube)  
+* **Firmware (ESP32/FreeRTOS):** [Este Repositório](https://github.com/lizandravieira/FocusCube/tree/main?tab=readme-ov-file)  
 * **Backend (Python/Flask):** [Link para o Repo do Backend](https://github.com/joaovfittipaldi/productive-cube)  
 * **Frontend (React/Dashboard):** [Link para o Repo do Frontend](https://github.com/caetrias/focus-cube)
 
